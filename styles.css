@@ -635,7 +635,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 820px) {
   .nav__links { display: none; }
   .nav__cta { display: none; }
-  .nav__toggle { display: flex; }
+  .nav__toggle { display: flex; margin-left: auto; }
 
   .nav__links.is-open {
     display: flex; flex-direction: column; gap: 0;
