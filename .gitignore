@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Editor / tooling
+.vscode/
+.idea/
+.claude/
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+
+# Node (not used, but just in case)
+node_modules/

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expectance — Systems Building Company</title>
+  <meta name="description" content="Expectance is a complete AI and software development company. We design, engineer, and operate business and enterprise systems across automation, robotics, driverless vehicles, and health." />
+
+  <!-- Favicon: the "Ex" mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Ctext x='50' y='50' dy='.34em' text-anchor='middle' fill='%23fff' font-family='Georgia,serif' font-weight='700' font-size='56'%3EEx%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Grain / texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="Expectance home">
+        <span class="brand__mark">Ex</span>
+        <span class="brand__word">Expectance</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#capabilities"><span class="nav__idx">01</span> Capabilities</a>
+        <a href="#work"><span class="nav__idx">02</span> Work</a>
+        <a href="#approach"><span class="nav__idx">03</span> Approach</a>
+        <a href="#about"><span class="nav__idx">04</span> About</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--sm nav__cta">Start a project</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="particles" aria-hidden="true"></canvas>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="eyebrow reveal">
+          <span class="eyebrow__dot"></span>
+          Systems building company
+        </p>
+
+        <h1 class="hero__title">
+          <span class="reveal glitch" style="--d:0" data-text="We build systems">We build systems</span>
+          <span class="reveal glitch" style="--d:1" data-text="that people">that people</span>
+          <span class="reveal glitch hero__title--em" style="--d:2" data-text="depend on.">depend on.</span>
+        </h1>
+
+        <p class="hero__lead reveal" style="--d:3">
+          Expectance is a complete AI and software development company. We design,
+          engineer, and operate business and enterprise systems across automation,
+          robotics, driverless vehicles, finance, and health.
+        </p>
+
+        <div class="hero__actions reveal" style="--d:4">
+          <a href="#work" class="btn">See our work</a>
+          <a href="#contact" class="btn btn--ghost">Start a project →</a>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <span class="mono">EST. 2019</span>
+        <span class="mono hero__scroll">Scroll <span class="hero__scroll-line"></span></span>
+        <span class="mono">37.7749° N, 122.4194° W</span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Automation</span><span class="ticker__dot">/</span>
+        <span>Robotics</span><span class="ticker__dot">/</span>
+        <span>Driverless Vehicles</span><span class="ticker__dot">/</span>
+        <span>Health Systems</span><span class="ticker__dot">/</span>
+        <span>Financial Systems</span><span class="ticker__dot">/</span>
+        <span>Artificial Intelligence</span><span class="ticker__dot">/</span>
+        <span>Software Engineering</span><span class="ticker__dot">/</span>
+        <span>Automation</span><span class="ticker__dot">/</span>
+        <span>Robotics</span><span class="ticker__dot">/</span>
+        <span>Driverless Vehicles</span><span class="ticker__dot">/</span>
+        <span>Health Systems</span><span class="ticker__dot">/</span>
+        <span>Financial Systems</span><span class="ticker__dot">/</span>
+        <span>Artificial Intelligence</span><span class="ticker__dot">/</span>
+        <span>Software Engineering</span><span class="ticker__dot">/</span>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="section capabilities" id="capabilities">
+      <div class="section__head">
+        <p class="label reveal">[ Capabilities ]</p>
+        <h2 class="section__title reveal">
+          One company, end to end —<br />from intelligence to infrastructure.
+        </h2>
+      </div>
+
+      <div class="cap-grid">
+        <article class="cap reveal">
+          <span class="cap__idx mono">01</span>
+          <h3 class="cap__title">Industrial Automation</h3>
+          <p class="cap__body">Control systems, MES, and digital twins that keep plants and processes running with precision and minimal downtime.</p>
+          <ul class="cap__tags">
+            <li>PLC / SCADA</li><li>Digital Twins</li><li>Process Control</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">02</span>
+          <h3 class="cap__title">Robotics</h3>
+          <p class="cap__body">Perception, motion planning, and fleet orchestration — from a single arm to coordinated multi-robot operations.</p>
+          <ul class="cap__tags">
+            <li>Perception</li><li>Motion Planning</li><li>Fleet Ops</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">03</span>
+          <h3 class="cap__title">Driverless Vehicles</h3>
+          <p class="cap__body">Autonomous platforms, sensor fusion, and safety-critical stacks engineered for the real world and built to certify.</p>
+          <ul class="cap__tags">
+            <li>Sensor Fusion</li><li>Safety Stacks</li><li>Teleops</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">04</span>
+          <h3 class="cap__title">Health Systems</h3>
+          <p class="cap__body">Clinical software, diagnostics, and data platforms that meet patients and providers where decisions are made.</p>
+          <ul class="cap__tags">
+            <li>Clinical Software</li><li>Diagnostics</li><li>Interop</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">05</span>
+          <h3 class="cap__title">Financial Systems</h3>
+          <p class="cap__body">Trading, risk, and payments platforms engineered for low latency, exactness, and the scrutiny that regulated finance demands.</p>
+          <ul class="cap__tags">
+            <li>Trading</li><li>Risk</li><li>Payments</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">06</span>
+          <h3 class="cap__title">Artificial Intelligence</h3>
+          <p class="cap__body">Models, MLOps, and decision systems — applied AI that ships to production and earns its place in the loop.</p>
+          <ul class="cap__tags">
+            <li>Applied ML</li><li>MLOps</li><li>Decision Systems</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal">
+          <span class="cap__idx mono">07</span>
+          <h3 class="cap__title">Software Engineering</h3>
+          <p class="cap__body">Platforms, cloud, and integration — the dependable software foundation every system above is built upon.</p>
+          <ul class="cap__tags">
+            <li>Platforms</li><li>Cloud</li><li>Integration</li>
+          </ul>
+        </article>
+
+        <a class="cap cap--cta reveal" href="#contact">
+          <h3 class="cap__title">Don't see your<br />domain here?</h3>
+          <p class="cap__body">We build systems wherever software meets the real world — from the factory floor to the trading desk. Tell us what you're trying to make real.</p>
+          <span class="cap__more mono">Start a project →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ WORK / PORTFOLIO ============ -->
+    <section class="section work" id="work">
+      <div class="section__head section__head--split">
+        <div>
+          <p class="label reveal">[ Selected Work ]</p>
+          <h2 class="section__title reveal">A portfolio of systems<br />in production.</h2>
+        </div>
+        <div class="work__filter reveal" role="tablist" aria-label="Filter work by domain">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="automation">Automation</button>
+          <button class="chip" data-filter="robotics">Robotics</button>
+          <button class="chip" data-filter="autonomy">Autonomy</button>
+          <button class="chip" data-filter="health">Health</button>
+          <button class="chip" data-filter="ai">AI</button>
+        </div>
+      </div>
+
+      <div class="work__list" id="workList">
+
+        <article class="case reveal" data-domain="autonomy robotics">
+          <span class="case__num mono">01</span>
+          <div class="case__main">
+            <h3 class="case__title">Atlas</h3>
+            <p class="case__desc">A driverless logistics fleet for a deep-water port operator — coordinating 120 autonomous vehicles across a live container terminal with zero manual dispatch.</p>
+          </div>
+          <ul class="case__tags">
+            <li>Autonomy</li><li>Robotics</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>+38%</strong> throughput</span>
+            <span class="mono">2025</span>
+          </div>
+        </article>
+
+        <article class="case reveal" data-domain="health ai">
+          <span class="case__num mono">02</span>
+          <div class="case__main">
+            <h3 class="case__title">Vitalis</h3>
+            <p class="case__desc">A clinical decision platform deployed across a 14-hospital network, surfacing risk earlier with AI that clinicians actually trust and audit.</p>
+          </div>
+          <ul class="case__tags">
+            <li>Health</li><li>AI</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>9hrs</strong> earlier detection</span>
+            <span class="mono">2024</span>
+          </div>
+        </article>
+
+        <article class="case reveal" data-domain="automation ai">
+          <span class="case__num mono">03</span>
+          <div class="case__main">
+            <h3 class="case__title">Forge</h3>
+            <p class="case__desc">A factory-wide automation and digital-twin system for a precision manufacturer, unifying twelve production lines under one real-time control plane.</p>
+          </div>
+          <ul class="case__tags">
+            <li>Automation</li><li>AI</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>−61%</strong> downtime</span>
+            <span class="mono">2024</span>
+          </div>
+        </article>
+
+        <article class="case reveal" data-domain="ai robotics">
+          <span class="case__num mono">04</span>
+          <div class="case__main">
+            <h3 class="case__title">Sentinel</h3>
+            <p class="case__desc">A computer-vision quality system that inspects every unit at line speed, catching defects no human pass could — running on the edge, in real time.</p>
+          </div>
+          <ul class="case__tags">
+            <li>AI</li><li>Robotics</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>99.4%</strong> recall</span>
+            <span class="mono">2023</span>
+          </div>
+        </article>
+
+        <article class="case reveal" data-domain="automation health">
+          <span class="case__num mono">05</span>
+          <div class="case__main">
+            <h3 class="case__title">Meridian</h3>
+            <p class="case__desc">An enterprise scheduling and resource platform for a national lab network — automating throughput planning across thousands of daily procedures.</p>
+          </div>
+          <ul class="case__tags">
+            <li>Automation</li><li>Health</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>2.3M</strong> ops / yr</span>
+            <span class="mono">2023</span>
+          </div>
+        </article>
+
+        <article class="case reveal" data-domain="autonomy ai">
+          <span class="case__num mono">06</span>
+          <div class="case__main">
+            <h3 class="case__title">Wayline</h3>
+            <p class="case__desc">A sensor-fusion and teleoperation stack for autonomous yard trucks, certified for mixed-traffic operation alongside human drivers.</p>
+          </div>
+          <ul class="case__tags">
+            <li>Autonomy</li><li>AI</li>
+          </ul>
+          <div class="case__meta">
+            <span class="case__metric"><strong>1.2M km</strong> autonomous</span>
+            <span class="mono">2022</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ APPROACH ============ -->
+    <section class="section approach" id="approach">
+      <div class="section__head">
+        <p class="label reveal">[ Approach ]</p>
+        <h2 class="section__title reveal">How we build a system<br />that lasts.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__num mono">01 — Discover</span>
+          <p class="step__body">We embed with your team to map the terrain — the constraints, the data, the people, and the real definition of done.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num mono">02 — Architect</span>
+          <p class="step__body">We design the system end to end: the intelligence, the software, the hardware in the loop, and the path to production.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num mono">03 — Build</span>
+          <p class="step__body">We engineer in tight iterations with real telemetry, shipping working systems — not slideware — from week one.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__num mono">04 — Operate</span>
+          <p class="step__body">We stay accountable for uptime and outcomes, running and improving the system long after launch.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS / ABOUT ============ -->
+    <section class="section stats" id="about">
+      <div class="stats__intro">
+        <p class="label reveal">[ About ]</p>
+        <h2 class="stats__statement reveal">
+          We are engineers, researchers, and operators who build the
+          <em>uncommon</em> systems other companies call impossible —
+          across every domain where software meets the physical world.
+        </h2>
+      </div>
+
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-count="120">0</span>
+          <span class="stat__label mono">Systems in production</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="7">0</span>
+          <span class="stat__label mono">Core domains</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="99" data-suffix=".9%">0</span>
+          <span class="stat__label mono">Operational uptime</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="80" data-suffix="+">0</span>
+          <span class="stat__label mono">Engineers &amp; researchers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / CONTACT ============ -->
+    <section class="section cta" id="contact">
+      <div class="cta__inner">
+        <p class="label reveal">[ Start a project ]</p>
+        <h2 class="cta__title reveal">
+          Have a system worth<br />building? Let's build it.
+        </h2>
+        <p class="cta__lead reveal">
+          Tell us what you're trying to make real. We'll tell you, honestly, how we'd build it.
+        </p>
+        <a href="mailto:hello@expectance.com" class="btn btn--lg reveal">hello@expectance.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <canvas class="footer__particles" id="footerParticles" aria-hidden="true"></canvas>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark">Ex</span>
+        <p class="footer__tag">Expectance — a systems building company. We design, engineer, and operate the systems that run what comes next.</p>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__head mono">Company</span>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__head mono">Contact</span>
+        <a href="mailto:hello@expectance.com">hello@expectance.com</a>
+        <a href="tel:+10000000000">+1 (000) 000-0000</a>
+        <a href="#contact">Start a project</a>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__head mono">Elsewhere</span>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">X / Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <span class="mono">© <span id="year">2026</span> Expectance Systems, Inc.</span>
+      <span class="mono">Built end to end.</span>
+    </div>
+  </footer>
+
+  <!-- Three.js (UMD global build, vendored locally — works over file:// and offline) -->
+  <script src="vendor/three.min.js"></script>
+  <script src="particles.js"></script>
+  <script src="footer.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
