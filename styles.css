@@ -181,17 +181,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
 
-/* At the top, the nav sits over the dark hero — flip it to a light theme.
-   Once scrolled (.is-scrolled) it reverts to the dark-on-white default. */
-.nav:not(.is-scrolled) .brand__word { color: var(--paper); }
-.nav:not(.is-scrolled) .brand__mark { background: var(--paper); color: var(--ink); }
-.nav:not(.is-scrolled) .nav__links a { color: var(--paper); }
-.nav:not(.is-scrolled) .nav__idx { color: rgba(255, 255, 255, 0.5); }
-.nav:not(.is-scrolled) .nav__links a::after { background: var(--paper); }
-.nav:not(.is-scrolled) .nav__cta { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-.nav:not(.is-scrolled) .nav__cta:hover { background: rgba(255, 255, 255, 0.86); }
-.nav:not(.is-scrolled) .nav__toggle span { background: var(--paper); }
-
 /* =========================================================
    HERO
    ========================================================= */
@@ -201,23 +190,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; flex-direction: column; justify-content: center;
   padding: 120px 0 0;          /* full-bleed: horizontal handled by inner wrappers */
   overflow: hidden;
-  /* dark stage + soft halo behind the glowing ring (Antigravity homage) */
-  background:
-    radial-gradient(ellipse 46% 58% at 72% 50%, rgba(36, 92, 150, 0.28), transparent 70%),
-    radial-gradient(ellipse 90% 90% at 72% 50%, #0a0e16 0%, #05060a 60%);
-  color: var(--paper);
 }
 .hero__canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
   z-index: 0;
 }
-/* left-side scrim keeps the headline legible over the ring's glow */
+/* radial veil keeps headline legible over the particle field */
 .hero__veil {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(95deg,
-              rgba(5, 6, 10, 0.92) 0%,
-              rgba(5, 6, 10, 0.55) 42%,
-              rgba(5, 6, 10, 0) 72%);
+  background: radial-gradient(ellipse 70% 60% at 32% 46%,
+              rgba(255,255,255,0.92) 0%,
+              rgba(255,255,255,0.55) 40%,
+              rgba(255,255,255,0) 75%);
 }
 .hero__inner {
   position: relative; z-index: 2;
@@ -229,12 +213,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-flex; align-items: center; gap: 0.65em;
   font-family: var(--font-mono);
   font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--ink);
   margin-bottom: 1.8rem;
 }
 .eyebrow__dot {
-  width: 8px; height: 8px; border-radius: 50%; background: #45c8ff;
-  box-shadow: 0 0 10px rgba(69, 200, 255, 0.9);
+  width: 8px; height: 8px; border-radius: 50%; background: var(--ink);
   animation: pulse 2.4s var(--ease) infinite;
 }
 @keyframes pulse {
@@ -250,7 +233,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.045em;
   margin-bottom: 2rem;
   max-width: 920px;
-  color: var(--paper);
 }
 .hero__title span { display: block; position: relative; }
 .hero__title--em { font-style: italic; font-weight: 500; }
@@ -263,7 +245,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   left: 0; top: 0;
   width: 100%;
   pointer-events: none;
-  mix-blend-mode: screen;         /* additive on the dark hero */
+  mix-blend-mode: multiply;
   opacity: 0;
 }
 .glitch::before {
@@ -300,16 +282,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: 560px;
   font-size: clamp(1.02rem, 1.7vw, 1.22rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--ink-2);
   margin-bottom: 2.6rem;
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
-/* hero buttons on the dark stage */
-.hero__actions .btn { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-.hero__actions .btn:hover { background: rgba(255, 255, 255, 0.86); }
-.hero__actions .btn--ghost { background: transparent; color: var(--paper); border-color: rgba(255, 255, 255, 0.38); }
-.hero__actions .btn--ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
 .hero__meta {
   position: relative; z-index: 2;
@@ -317,15 +294,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-top: auto; margin-left: auto; margin-right: auto;
   padding: clamp(30px, 6vh, 60px) var(--gutter) 28px;
   display: flex; justify-content: space-between; gap: 16px;
-  color: rgba(255, 255, 255, 0.46); flex-wrap: wrap;
+  color: var(--muted); flex-wrap: wrap;
 }
-.hero__scroll { display: inline-flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.86); }
+.hero__scroll { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
 .hero__scroll-line {
-  width: 46px; height: 1px; background: rgba(255, 255, 255, 0.4); position: relative; overflow: hidden;
+  width: 46px; height: 1px; background: var(--ink); position: relative; overflow: hidden;
 }
 .hero__scroll-line::after {
   content: ""; position: absolute; inset: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--paper-3);
   animation: scrollline 2.2s var(--ease) infinite;
 }
 @keyframes scrollline {
@@ -627,9 +604,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
   .nav__links.is-open a { padding: 16px 0; border-bottom: 1px solid var(--line-soft); font-size: 1.05rem; }
   .nav.is-scrolled .nav__links.is-open { background: var(--paper); }
-  /* the open menu is a white sheet — keep its links dark even at the top */
-  .nav:not(.is-scrolled) .nav__links.is-open a { color: var(--ink); }
-  .nav:not(.is-scrolled) .nav__links.is-open .nav__idx { color: var(--muted-2); }
 
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .cap--cta { grid-column: auto; }
@@ -641,7 +615,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 560px) {
   .hero { padding-top: 110px; }
-  .hero__veil { background: linear-gradient(180deg, rgba(5,6,10,0.9) 0%, rgba(5,6,10,0.5) 40%, rgba(5,6,10,0) 72%); }
+  .hero__veil { background: radial-gradient(ellipse 120% 70% at 50% 42%, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 80%); }
   .hero__meta .mono:nth-child(3) { display: none; }
 
   .cap-grid { grid-template-columns: 1fr; }

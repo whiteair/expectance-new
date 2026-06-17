@@ -23,7 +23,7 @@ It's plain HTML/CSS/JS — no build step.
 |------|---------|
 | `index.html` | Page structure & all copy |
 | `styles.css` | Design system, layout, responsive rules, hero text glitch |
-| `particles.js` | Three.js hero — glowing rotating particle ring (Google Antigravity homage) |
+| `particles.js` | Three.js hero — flow-field particles; lines grow among dots near the cursor |
 | `footer.js` | Three.js footer — undulating particle wave; cursor spreads particles |
 | `main.js` | Nav, mobile menu, scroll reveals, portfolio filter, stat count-up |
 | `vendor/three.min.js` | Three.js r128 (vendored — no CDN needed) |
@@ -41,10 +41,11 @@ It's plain HTML/CSS/JS — no build step.
 ## Customizing the look
 
 - **Colors & fonts:** the `:root` variables at the top of `styles.css`.
-- **Hero ring (Antigravity homage):** `RING` / `TUBE` (ring + thickness),
-  `SPIN_SPEED`, `BASE_TILT_X` (viewing angle), particle count (`countFor`), and
-  the hue in `build()` in `particles.js`. The dark hero stage + halo live in the
-  `.hero` background in `styles.css`.
+- **Hero flow-field:** `FLOW` / `FLOW_SPEED` (drift speed), particle count
+  (`countFor`), `CURSOR_R` (cursor reach), `CURSOR_GROW` (how much dots enlarge
+  near the cursor), `LINK` (max gap for a line), and the colour knobs
+  `COLOR_SAT` / `COLOR_LIGHT` / `COLOR_FREQ` (cluster size) / `COLOR_DRIFT`
+  (how fast colours shift) in `particles.js`.
 - **Footer wave:** speed (`t += …`), `SPREAD_R` / `SPREAD` / `RISE` (cursor
   spread), grid size (`GX`/`GY`), and `MOTES` in `footer.js`.
 - **Hero intro glitch:** the `glitch-in-a` / `glitch-in-b` keyframes and the two
