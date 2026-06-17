@@ -361,9 +361,9 @@
 
   </main>
 
-  <!-- ============ CLOSING — dark zone with a shared particle field ============ -->
+  <!-- ============ CLOSING — dark zone; ambient particles span CTA + footer ============ -->
   <div class="closing">
-    <canvas class="footer__particles" id="footerParticles" aria-hidden="true"></canvas>
+    <canvas class="closing__particles" id="closingParticles" aria-hidden="true"></canvas>
 
     <!-- CTA / CONTACT -->
     <section class="section cta" id="contact">
@@ -381,6 +381,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
+      <canvas class="footer__particles" id="footerParticles" aria-hidden="true"></canvas>
       <div class="footer__inner">
       <div class="footer__brand">
         <span class="brand__mark">Ex</span>
@@ -421,6 +422,7 @@
   <script src="vendor/three.min.js"></script>
   <script src="particles.js"></script>
   <script src="footer.js"></script>
+  <script src="ambient.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
