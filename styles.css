@@ -188,7 +188,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   min-height: 100svh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 120px 0 0;          /* full-bleed: horizontal handled by inner wrappers */
+  /* balanced top/bottom so the content sits centred (nav clears the top,
+     the meta row is pinned to the bottom, out of flow) */
+  padding: clamp(108px, 15vh, 150px) 0 clamp(84px, 12vh, 116px);
   overflow: hidden;
 }
 .hero__canvas {
@@ -301,10 +303,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
 .hero__meta {
-  position: relative; z-index: 2;
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
   width: 100%; max-width: var(--maxw);
-  margin-top: auto; margin-left: auto; margin-right: auto;
-  padding: clamp(30px, 6vh, 60px) var(--gutter) 28px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 28px;
   display: flex; justify-content: space-between; gap: 16px;
   color: var(--muted); flex-wrap: wrap;
 }
@@ -421,6 +423,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .work__list { border-top: 1px solid var(--line); }
 
+.work__more-wrap { display: flex; justify-content: center; margin-top: clamp(36px, 5vw, 56px); }
+.work__more[hidden] { display: none; }
+
 .case {
   display: grid;
   grid-template-columns: 56px minmax(0, 1.7fr) 200px 220px;
@@ -428,11 +433,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: clamp(28px, 3.4vw, 44px) 8px;
   border-bottom: 1px solid var(--line);
   position: relative;
-  transition: padding 0.5s var(--ease), background 0.4s var(--ease);
+  transition: background 0.4s var(--ease);
 }
-/* hover fill matches the Approach section background (--paper-2) */
+/* hover simply fills the row (no shift), like the capabilities cells */
 .case:hover {
-  padding-left: 24px; padding-right: 24px;
   background: var(--paper-2);
 }
 .case.is-hidden {
@@ -626,7 +630,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @media (max-width: 560px) {
-  .hero { padding-top: 110px; }
   .hero__veil { background: radial-gradient(ellipse 120% 70% at 50% 42%, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 80%); }
   .hero__meta .mono:nth-child(3) { display: none; }
 

@@ -67,21 +67,49 @@
     window.addEventListener("scroll", revealOnScreen, { passive: true });
   }
 
-  /* ---- Portfolio filter ------------------------------------------------ */
+  /* ---- Portfolio filter + show-more (capped at 3) ---------------------- */
   var chips = document.querySelectorAll(".work__filter .chip");
   var cases = document.querySelectorAll("#workList .case");
+  var workMore = document.getElementById("workMore");
+  var CAP = 3;
+  var currentFilter = "all";
+  var expanded = false;
+
+  function applyWork() {
+    var shown = 0;
+    cases.forEach(function (card) {
+      var domains = card.getAttribute("data-domain") || "";
+      var matches = currentFilter === "all" || domains.indexOf(currentFilter) !== -1;
+      var visible = matches && (expanded || shown < CAP);
+      if (matches) shown++;
+      card.classList.toggle("is-hidden", !visible);
+      if (visible) card.classList.add("in");   // ensure revealed when un-capped
+    });
+    if (workMore) {
+      workMore.hidden = shown <= CAP;
+      workMore.textContent = expanded ? "Show less" : "Show more";
+    }
+  }
+
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
-      var filter = chip.getAttribute("data-filter");
+      currentFilter = chip.getAttribute("data-filter");
+      expanded = false;
       chips.forEach(function (c) { c.classList.remove("is-active"); });
       chip.classList.add("is-active");
-      cases.forEach(function (card) {
-        var domains = card.getAttribute("data-domain") || "";
-        var show = filter === "all" || domains.indexOf(filter) !== -1;
-        card.classList.toggle("is-hidden", !show);
-      });
+      applyWork();
     });
   });
+  if (workMore) {
+    workMore.addEventListener("click", function () {
+      expanded = !expanded;
+      applyWork();
+      if (!expanded) {
+        document.getElementById("work").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+  applyWork();
 
   /* ---- Stat count-up --------------------------------------------------- */
   var stats = document.querySelectorAll(".stat__num");
